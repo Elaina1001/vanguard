@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- ADD META TAG REQUIRED TO MAKE PAGE RESPONSIVE-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vaanguard- Leading the Future of Success. Premier strategic investment and business acceleration firm for high-growth enterprises.">
     <meta name="keywords" content="business growth, strategic investment, mergers, corporate consulting, digital transformation">
-<!-- ADD META TAG FOR AUTHOR AND YOUR NAME-->
+
     <meta name="author" content="Elaina Nieves">
     <title>Vanguard | Leading the Future of Success</title>
-<!-- ADD LINK TO YOUR CSS-->
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
 <header>
+    <div class="container header-flex">
+        <div class="logo-area">
+        <img src="vanguard-logo.svg" alt="Vaanguard Logo" class="logo">  
+    </div>
+
     <h1>Vaanguard</h1>
     <nav>
         <h2>Navigation</h2>
@@ -29,8 +34,9 @@
 
 <main>
     <section id="services">
+        <div class="container">
         <h2>What We Offer</h2>
-
+            <div class="services-grid">
         <article>
             <h3>Strategic Growth Consulting</h3>
             <p>Unlock new revenue streams and optimize market expansion strategies.</p>
@@ -60,14 +66,21 @@
             <h3>Corporate Innovation</h3>
             <p>Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance competitive advantage, and adapt to evolving market demands.</p>
         </article>
+            </div>
+        </div>
     </section>
 
     <section id="results">
+        <div class="container">
             <h2>Proven Results</h2>
             <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
+                <h3>Revenue Growth</h3>
+                <p>Our clients have experienced an average revenue increase of 150% within the first year of partnership.</p>
 
+            <div class="results-layout">
+                <div class="table-container">
+                    <h3>Profits</h3>
             <table>
-                <caption>Profits</caption>
                 <thead>
                     <tr>
                         <th>Year</th>
@@ -93,7 +106,9 @@
                     </tr>
                 </tbody>
             </table>
+         </div>
 
+         <div class="chart-container">
                <h3>Growth</h3> 
 <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
                     <div  id="bar-chart">
@@ -103,9 +118,13 @@
                         <div class="bar" data-year="2023" style="--height: 85%;"></div>
                         <div class="bar" data-year="2024" style="--height: 100%;"></div>
                     </div>
+            </div>
+        </div>
+    </div>
     </section>
 
        <section id="contact">
+        <div class="container">
         <h2>Contact Us</h2>
         <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
 
@@ -134,11 +153,16 @@
 
             <button type="submit">Submit</button>
         </form>
+        </div>
        </section>
-
+       </main>
        <footer>
-
+        <div class="container">
         <p>For educational purposes only.</p>
         <p>Email: info@vaanguard.com</p>
         <p>Phone: 480.123.4567</p>
+        </div>
         </footer>
+    
+</body>
+</html>
