@@ -117,6 +117,35 @@ header {
     padding: 1rem;
     overflow: hidden;
 }
+#hero p { max-width: 700px; margin-bottom: 2rem; }
+
+.btn {
+    background: var(--blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+/* CONTENT SECTIONS */
+#about, #services {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr; 
+}
+
+article {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 2.5rem;
+}
+
+
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 
