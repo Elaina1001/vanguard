@@ -68,8 +68,9 @@ body {
     font-family: var(--font);
     background-color: var(--black);
     color: var(--white);
+    min-width: 400px;
 }
-.container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 3rem 0; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 3rem 0; }
 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--blue); }
 h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 
@@ -87,12 +88,42 @@ h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 
 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--blue); font-weight: 700; }
 h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+    padding: 1rem;
+    border: none;
+    background-color: var(--white);
+    font-family: var(--font);
+    width: 100%;
+}
+
 
 /* HEADER & NAVIGATION */
 header {
-    border-bottom: 2px solid var(--blue);
-    padding: 1rem 0;
-}
+    border-bottom: 2px solid var(--blue); padding: 1rem 0; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo-img { width: 40px; height: 40px; }
+.logo-area h1 { font-size: 1.8rem; font-weight: 700; color: var(--blue); }
+.desktop-nav { display: none; }
 
 .header-flex {
     display: flex;
@@ -110,12 +141,13 @@ header {
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 1rem;
-    overflow: hidden;
+    padding: 2rem;
 }
 #hero p { max-width: 700px; margin-bottom: 2rem; }
 
@@ -126,12 +158,17 @@ header {
     font-weight: 700;
     border-radius: 4px;
 }
-
+.btn:hover { background: var(--red); color: var(--blue); transform: scale(1.05); }
 /* CONTENT SECTIONS */
-#about, #services {
-    background-color: var(--white);
-    color: var(--black);
+#about, #services { background-color: var(--white); color: var(--black); }
+.services-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+article { 
+    background-color: var(--blue); 
+    color: var(--white); 
+    padding: 2rem; 
+    transition: transform 0.3s;
 }
+article:hover { transform: translateY(-5px); }
 
 .services-grid {
     display: grid;
@@ -145,7 +182,22 @@ article {
     padding: 2.5rem;
 }
 
+/* RESULTS */
+#results {
+    background-color: var(--blue);
+    color: var(--white);
+}
+#results h2 {
+     color: var(--white); 
+}
+.results-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
 
+table { width: 100%; background-color: var(--black); margin-bottom: 2rem; }
+th, td { border: 1px solid var(--charcoal); padding: 1rem; text-align: center; }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 
@@ -204,32 +256,52 @@ article {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+footer {
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: block;
+    }
     #results {
         grid-template-columns: 1fr 1fr;
     }
-    .results-container {
+    .results-layout {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .results-table {
         width: 50%;
     }
-    .bar-chart {
+
+    .chart-container {
         width: 50%;
     }
+    #bar-chart {
+        width: 50%;
+    }
+}
 
 
 /* MEDIA QUERIES (LARGE) */
 @media (min-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(3, 1fr); } /* 3 Boxes across */
-  
-  .results-layout { flex-direction: row; align-items: flex-start; }
-  .table-container { flex: 1.2; }
-  .chart-container { flex: 1; }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    .results-layout { flex-direction: row; }
+    .table-container, .chart-container { flex: 1; }
 
-  .form-row { display: flex; gap: 2rem; } /* Form side-by-side */
-  .submit-btn { width: 48.5%; align-self: flex-end; } /* Match image button width */
-}
+    .form-row { display: flex; gap: 2rem; }
+    .submit-btn { background: var(--blue);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+        
+            }}
