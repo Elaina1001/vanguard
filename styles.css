@@ -63,10 +63,17 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
+body {
+    line-height: 1.6;
+    font-family: var(--font);
+    background-color: var(--black);
+    color: var(--white);
+}
 .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 3rem 0; }
 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--blue); }
 h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+
+
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
@@ -81,6 +88,24 @@ h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--blue); font-weight: 700; }
 h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 
+/* HEADER & NAVIGATION */
+header {
+    border-bottom: 2px solid var(--blue);
+    padding: 1rem 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo-img { width: 45px; height: 45px; }
+.logo-area h1 { font-size: 2rem; font-weight: 700; color: var(--blue); }
+
+.desktop-nav ul { display: flex; gap: 2rem; }
+.desktop-nav a { color: var(--blue); font-weight: 700; font-size: 0.9rem; }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #hero{
@@ -169,3 +194,13 @@ h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 
 
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); } /* 3 Boxes across */
+  
+  .results-layout { flex-direction: row; align-items: flex-start; }
+  .table-container { flex: 1.2; }
+  .chart-container { flex: 1; }
+
+  .form-row { display: flex; gap: 2rem; } /* Form side-by-side */
+  .submit-btn { width: 48.5%; align-self: flex-end; } /* Match image button width */
+}
